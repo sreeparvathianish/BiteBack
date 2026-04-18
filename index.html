@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>BiteBack</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#2b7a2b">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <h1>BiteBack 🍽️</h1>
+  <p class="tagline">Save food. Save money. Save the planet.</p>
+
+  <!-- NAVIGATION -->
+  <div class="nav">
+    <button onclick="showSection('addFoodSection')">➕ Add Food</button>
+    <button onclick="showSection('donateSection')">🤝 Donate Food</button>
+    <button onclick="showSection('impactSection')">📊 Impact Dashboard</button>
+  </div>
+
+  <!-- =========================
+       ADD FOOD SECTION
+  ========================== -->
+  <div class="container section" id="addFoodSection">
+
+    <h2>➕ Add Food Item</h2>
+
+    <input type="text" id="foodName" placeholder="Food name (e.g., Milk)">
+
+    <select id="foodCategory">
+      <option value="Dairy">Dairy</option>
+      <option value="Vegetables">Vegetables</option>
+      <option value="Fruits">Fruits</option>
+      <option value="Snacks">Snacks</option>
+      <option value="Cooked Food">Cooked Food</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <input type="date" id="expiryDate">
+    <input type="number" id="quantity" placeholder="Quantity (optional)">
+
+    <button onclick="addFood()">Add Food</button>
+
+    <h2>📌 Food List</h2>
+    <ul id="foodList"></ul>
+
+  </div>
+
+  <!-- =========================
+       DONATE FOOD SECTION
+  ========================== -->
+  <div class="container section" id="donateSection" style="display:none;">
+
+    <h2>🤝 Donate Food & Support in Ireland</h2>
+    <p>These organisations help reduce food waste and support people in need across Ireland.</p>
+
+    <div class="donateCard">
+      <h3>🍎 FoodCloud</h3>
+      <p>Connects surplus food from businesses to charities and community groups.</p>
+      <p><a href="https://food.cloud/" target="_blank">https://food.cloud/</a></p>
+    </div>
+
+    <div class="donateCard">
+      <h3>❤️ Society of St. Vincent de Paul (SVP)</h3>
+      <p>Provides food support and helps families in need across Ireland.</p>
+      <p><a href="https://www.svp.ie/" target="_blank">https://www.svp.ie/</a></p>
+    </div>
+
+    <div class="donateCard">
+      <h3>🍽️ Crosscare</h3>
+      <p>Offers food services, meals, and support for people experiencing poverty.</p>
+      <p><a href="https://crosscare.ie/" target="_blank">https://crosscare.ie/</a></p>
+    </div>
+
+    <div class="donateCard">
+      <h3>🏠 Simon Community</h3>
+      <p>Supports people experiencing homelessness with food and housing services.</p>
+      <p><a href="https://www.simon.ie/" target="_blank">https://www.simon.ie/</a></p>
+    </div>
+
+    <div class="donateCard">
+      <h3>🥣 Capuchin Day Centre</h3>
+      <p>Provides meals and food parcels for people in need in Dublin.</p>
+      <p><a href="https://capuchindaycentre.ie/" target="_blank">https://capuchindaycentre.ie/</a></p>
+    </div>
+
+    <div class="donateCard">
+      <h3>🍲 Little Flower Penny Dinners</h3>
+      <p>Provides hot meals daily and support for elderly and vulnerable people.</p>
+      <p><a href="https://www.littleflower.ie/" target="_blank">https://www.littleflower.ie/</a></p>
+    </div>
+
+    <p class="note">
+      ⚠️ Always check each organisation’s website before donating food to ensure safety and requirements.
+    </p>
+
+  </div>
+
+  <!-- =========================
+       IMPACT DASHBOARD
+  ========================== -->
+  <div class="container section" id="impactSection" style="display:none;">
+
+    <h2>📊 Impact Dashboard</h2>
+    <p>See how BiteBack helps reduce food waste and climate impact.</p>
+
+    <div class="impactBox">
+      <h3>Total Food Items</h3>
+      <p id="totalItems">0</p>
+    </div>
+
+    <div class="impactBox">
+      <h3>Expired Items</h3>
+      <p id="expiredItems">0</p>
+    </div>
+
+    <div class="impactBox">
+      <h3>Food Saved</h3>
+      <p id="savedItems">0</p>
+    </div>
+
+    <div class="impactBox">
+      <h3>CO₂ Reduced 🌍</h3>
+      <p id="co2Saved">0 kg</p>
+    </div>
+
+    <div class="impactBox">
+      <h3>Money Saved 💰</h3>
+      <p id="moneySaved">€0</p>
+    </div>
+
+    <p class="note">
+      These values are estimates to show environmental impact.
+    </p>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
