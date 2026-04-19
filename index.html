@@ -5,33 +5,31 @@
   <meta charset="UTF-8">
   <title>BiteBack</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2b7a2b">
+
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-
-  <meta name="theme-color" content="#2b7a2b">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-  <h1>BiteBack 🍽️</h1>
-  <p class="tagline">Save food. Save money. Save the planet.</p>
+  <h1>🍽️ BiteBack</h1>
+  <p class="tagline">Save food. Save money. Save the planet 🌍</p>
 
   <!-- NAVIGATION -->
   <div class="nav">
     <button onclick="showSection('addFoodSection')">➕ Add Food</button>
     <button onclick="showSection('donateSection')">🤝 Support & Donate</button>
-    <button onclick="showSection('impactSection')">📊 Impact Dashboard</button>
+    <button onclick="showSection('impactSection')">📊 Impact</button>
   </div>
 
-  <!-- =========================
-       ADD FOOD SECTION
-  ========================== -->
+  <!-- ================= ADD FOOD ================= -->
   <div class="container section" id="addFoodSection">
 
     <h2>➕ Add Food Item</h2>
 
-    <input type="text" id="foodName" placeholder="Food name (e.g., Milk)">
+    <input type="text" id="foodName" placeholder="Food name (e.g. Milk)">
 
     <select id="foodCategory">
       <option value="Dairy">Dairy</option>
@@ -47,78 +45,73 @@
 
     <button onclick="addFood()">Add Food</button>
 
-    <h2>📌 Food List</h2>
+    <h2>📌 Your Food List</h2>
     <ul id="foodList"></ul>
 
   </div>
 
-  <!-- =========================
-       SUPPORT & DONATE SECTION
-  ========================== -->
+  <!-- ================= SUPPORT & DONATE ================= -->
   <div class="container section" id="donateSection" style="display:none;">
 
-    <h2>🤝 Support Food Poverty Organisations in Ireland</h2>
+    <h2>🤝 Support & Donate in Ireland</h2>
+
+    <p class="note">
+      ⚠️ Important: Some organisations accept food donations, while others only accept financial donations.
+      Always check their official website before donating.
+    </p>
+
     <p>
-      These organisations help reduce food waste and support people facing hunger and homelessness.
-      Some accept food through partners, while others accept money donations or volunteers.
-      Always check their website for updated information.
+      These organisations help reduce food waste, fight hunger, and support people in need across Ireland.
     </p>
 
     <div class="donateCard">
       <h3>🍎 FoodCloud</h3>
-      <p>Reduces food waste by connecting surplus food with charities.</p>
-      <p><b>How to help:</b> Volunteer, partner, or support their work.</p>
-      <p><a href="https://food.cloud/" target="_blank">https://food.cloud/</a></p>
+      <p>Connects surplus food from businesses to charities and communities.</p>
+      <a href="https://food.cloud/" target="_blank">Visit Website</a>
     </div>
 
     <div class="donateCard">
       <h3>❤️ Society of St. Vincent de Paul (SVP)</h3>
-      <p>Provides support to individuals and families in need across Ireland.</p>
-      <p><b>How to help:</b> Donate money or volunteer.</p>
-      <p><a href="https://www.svp.ie/" target="_blank">https://www.svp.ie/</a></p>
+      <p>Provides financial and social support to families in need across Ireland.</p>
+      <a href="https://www.svp.ie/" target="_blank">Visit Website</a>
     </div>
 
     <div class="donateCard">
       <h3>🍽️ Crosscare</h3>
-      <p>Supports people experiencing poverty through community services and meals.</p>
-      <p><b>How to help:</b> Donate money or support programs.</p>
-      <p><a href="https://crosscare.ie/" target="_blank">https://crosscare.ie/</a></p>
+      <p>Offers meals and support services for people experiencing poverty.</p>
+      <a href="https://crosscare.ie/" target="_blank">Visit Website</a>
     </div>
 
     <div class="donateCard">
       <h3>🏠 Simon Community</h3>
-      <p>Supports people experiencing homelessness with housing and care services.</p>
-      <p><b>How to help:</b> Donate money, volunteer, or fundraise.</p>
-      <p><a href="https://www.simon.ie/" target="_blank">https://www.simon.ie/</a></p>
+      <p>Supports people experiencing homelessness with housing and essential services.</p>
+      <a href="https://www.simon.ie/" target="_blank">Visit Website</a>
     </div>
 
     <div class="donateCard">
       <h3>🥣 Capuchin Day Centre</h3>
-      <p>Provides meals and support for vulnerable people in Dublin.</p>
-      <p><b>How to help:</b> Donate money or support services.</p>
-      <p><a href="https://capuchindaycentre.ie/" target="_blank">https://capuchindaycentre.ie/</a></p>
+      <p>Provides meals and support for people in need in Dublin.</p>
+      <a href="https://capuchindaycentre.ie/" target="_blank">Visit Website</a>
     </div>
 
     <div class="donateCard">
       <h3>🍲 Little Flower Penny Dinners</h3>
-      <p>Provides hot meals and support for elderly and vulnerable people.</p>
-      <p><b>How to help:</b> Donate money, volunteer, or support services.</p>
-      <p><a href="https://www.littleflower.ie/" target="_blank">https://www.littleflower.ie/</a></p>
+      <p>Offers hot meals and support services for vulnerable people.</p>
+      <a href="https://www.littleflower.ie/" target="_blank">Visit Website</a>
     </div>
 
     <p class="note">
-      ⚠️ Always check each organisation’s website for the most up-to-date ways to help.
+      💡 Tip: Always check what each organisation accepts before donating food or money.
     </p>
 
   </div>
 
-  <!-- =========================
-       IMPACT DASHBOARD
-  ========================== -->
+  <!-- ================= IMPACT DASHBOARD ================= -->
   <div class="container section" id="impactSection" style="display:none;">
 
-    <h2>📊 Impact Dashboard</h2>
-    <p>See how BiteBack helps reduce food waste and climate impact.</p>
+    <h2>📊 Your Impact</h2>
+
+    <p>See how BiteBack helps reduce food waste and protect the environment 🌍</p>
 
     <div class="impactBox">
       <h3>Total Food Items</h3>
@@ -146,7 +139,7 @@
     </div>
 
     <p class="note">
-      These values are estimates to help show environmental impact.
+      These are estimated values to show your positive environmental and social impact.
     </p>
 
   </div>

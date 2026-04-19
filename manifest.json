@@ -1,10 +1,13 @@
 {
   "name": "BiteBack",
   "short_name": "BiteBack",
-  "start_url": "index.html",
+  "description": "An app that helps reduce food waste by tracking expiry dates and connecting users to food donation centres in Ireland.",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#f3f7f3",
   "theme_color": "#2b7a2b",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icon.png",

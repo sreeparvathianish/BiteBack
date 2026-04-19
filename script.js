@@ -1,14 +1,14 @@
 let foodItems = JSON.parse(localStorage.getItem("foodItems")) || [];
 
 /* =========================
-   SAVE DATA
+   SAVE TO LOCAL STORAGE
 ========================= */
 function saveFoodItems() {
   localStorage.setItem("foodItems", JSON.stringify(foodItems));
 }
 
 /* =========================
-   NAVIGATION (SHOW SECTIONS)
+   NAVIGATION BETWEEN SECTIONS
 ========================= */
 function showSection(sectionId) {
   document.getElementById("addFoodSection").style.display = "none";
@@ -53,7 +53,7 @@ function addFood() {
 }
 
 /* =========================
-   DAYS LEFT CALCULATION
+   CALCULATE DAYS LEFT
 ========================= */
 function daysLeft(expiryDate) {
   let today = new Date();
@@ -62,8 +62,8 @@ function daysLeft(expiryDate) {
   today.setHours(0, 0, 0, 0);
   expiry.setHours(0, 0, 0, 0);
 
-  let diffTime = expiry - today;
-  return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  let diff = expiry - today;
+  return Math.ceil(diff / (1000 * 60 * 60 * 24));
 }
 
 /* =========================
@@ -113,13 +113,16 @@ function updateImpactDashboard() {
 
   foodItems.forEach(food => {
     let left = daysLeft(food.expiry);
-    if (left < 0) expired++;
-    else saved++;
+    if (left < 0) {
+      expired++;
+    } else {
+      saved++;
+    }
   });
 
   // Simple estimates (for demo purposes)
-  let co2 = saved * 2;       // kg CO₂ per saved item
-  let money = saved * 1.5;   // € saved per item (basic estimate)
+  let co2 = saved * 2;       // 2 kg CO₂ per saved item
+  let money = saved * 1.5;   // €1.5 saved per item
 
   document.getElementById("totalItems").innerText = total;
   document.getElementById("expiredItems").innerText = expired;
@@ -138,12 +141,12 @@ displayFood();
 ========================= */
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("service-worker.js")
+    navigator.serviceWorker.register("./service-worker.js")
       .then(() => {
         console.log("Service Worker Registered ✔️");
       })
-      .catch((error) => {
-        console.log("Service Worker Failed ❌", error);
+      .catch(err => {
+        console.log("Service Worker Error ❌", err);
       });
   });
 }
