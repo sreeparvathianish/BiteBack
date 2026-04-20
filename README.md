@@ -12,8 +12,6 @@ Food waste is a major cause of climate change because wasted food produces green
 
 👉 **https://sreeparvathianish.github.io/BiteBack/**
 
-(Replace this link with your actual GitHub Pages link.)
-
 ---
 
 ## ⭐ Features
